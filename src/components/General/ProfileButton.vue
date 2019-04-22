@@ -1,6 +1,6 @@
 <template>
   <b-navbar-nav class="ml-auto">
-    <b-button v-if="!isAuthenticated" variant="primary" :href="oauthURL"
+    <b-button v-if="!isAuthenticated && !loading" variant="primary" :href="oauthURL"
       >Login with Discord</b-button
     >
   </b-navbar-nav>
@@ -12,13 +12,15 @@ import { mapState, mapActions, mapGetters } from 'vuex';
 export default {
   created() {
     const code = this.$route.query.code;
-
     if (code) {
       this.fetchToken(code);
       this.$router.replace('/');
     }
   },
   methods: mapActions('oAuth', ['fetchToken']),
-  computed: { ...mapState('oAuth', ['oauthURL']), ...mapGetters('oAuth', ['isAuthenticated']) }
+  computed: {
+    ...mapState('oAuth', ['oauthURL', 'loading']),
+    ...mapGetters('oAuth', ['isAuthenticated'])
+  }
 };
 </script>
