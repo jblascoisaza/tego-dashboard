@@ -10,7 +10,19 @@
           <b-nav-item to="/">Home</b-nav-item>
           <b-nav-item to="/about">About</b-nav-item>
         </b-navbar-nav>
+
+        <ProfileButton />
       </b-collapse>
     </b-navbar>
   </div>
 </template>
+
+<script>
+import ProfileButton from '@/components/General/ProfileButton.vue';
+
+export default {
+  components: {
+    ProfileButton
+  }
+};
+</script>
