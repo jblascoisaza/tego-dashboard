@@ -16,6 +16,7 @@ const state = {
   oauthURL: decodeURIComponent(oauthURL),
   token: '',
   userData: '',
+  canManageGuilds: '',
   loading: false
 };
 
@@ -25,6 +26,7 @@ const mutations = {
   },
   SET_USER_DATA(state, user) {
     state.userData = user;
+    state.canManageGuilds = user.guilds.filter(guild => guild.userCanManage);
   },
   SET_LOADING(state, status) {
     state.loading = status;

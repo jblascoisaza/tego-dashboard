@@ -14,7 +14,7 @@ export default {
     const code = this.$route.query.code;
     if (code) {
       this.fetchToken(code);
-      this.$router.replace('/');
+      this.$router.push('/guilds');
     }
   },
   methods: mapActions('oAuth', ['fetchToken']),
