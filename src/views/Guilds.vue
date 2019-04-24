@@ -1,26 +1,35 @@
 <template>
-  <b-container class="bv-example-row guilds" align="center">
-    <b-row>
-      <b-col v-for="(guild, index) in paginatedItems" :key="index">
-        <GuildCard
-          :name="guild.name"
-          :iconURL="
-            guild.iconURL
-              ? guild.iconURL
-              : 'https://cdn.discordapp.com/icons/467300599885594624/1aede8acaf8cac9f70a51eb905b1fe4c.png'
-          "
-          :guildID="guild.id"
-        />
-      </b-col>
-    </b-row>
-    <b-pagination
-      @change="onPageChanged"
-      v-model="currentPage"
-      :per-page="perPage"
-      :total-rows="rows"
-      align="center"
-    ></b-pagination>
-  </b-container>
+  <div class="guilds">
+    <b-card no-body>
+      <b-tabs small card>
+        <b-tab title="Standard">
+          <b-container class="bv-example-row" align="center">
+            <b-row>
+              <b-col v-for="(guild, index) in paginatedItems" :key="index">
+                <GuildCard
+                  :name="guild.name"
+                  :iconURL="
+                    guild.iconURL
+                      ? guild.iconURL
+                      : 'https://cdn.discordapp.com/icons/467300599885594624/1aede8acaf8cac9f70a51eb905b1fe4c.png'
+                  "
+                  :guildID="guild.id"
+                />
+              </b-col>
+            </b-row>
+            <b-pagination
+              @change="onPageChanged"
+              v-model="currentPage"
+              :per-page="perPage"
+              :total-rows="rows"
+              align="center"
+            ></b-pagination>
+          </b-container>
+        </b-tab>
+        <b-tab title="Premium Plan">No premium guilds.</b-tab>
+      </b-tabs>
+    </b-card>
+  </div>
 </template>
 
 <script>
@@ -69,6 +78,6 @@ export default {
 
 <style scoped>
 .guilds {
-  margin-top: 25px;
+  padding: 4rem 2rem;
 }
 </style>
