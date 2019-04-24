@@ -9,6 +9,7 @@
               ? guild.iconURL
               : 'https://cdn.discordapp.com/icons/467300599885594624/1aede8acaf8cac9f70a51eb905b1fe4c.png'
           "
+          :guildID="guild.id"
         />
       </b-col>
     </b-row>

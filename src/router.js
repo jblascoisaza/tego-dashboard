@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Guilds from './views/Guilds.vue';
+import Manage from './views/Manage.vue';
 
 Vue.use(Router);
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/guilds',
       name: 'guilds',
       component: Guilds
+    },
+    {
+      path: '/guild/:id',
+      name: 'manage',
+      component: Manage
     }
   ]
 });
