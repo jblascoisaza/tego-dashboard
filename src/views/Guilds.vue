@@ -26,7 +26,24 @@
             ></b-pagination>
           </b-container>
         </b-tab>
-        <b-tab title="Premium Plan">No premium guilds.</b-tab>
+        <b-tab title="Premium Plan">
+          <p v-if="!premiumGuilds.length">No premium guilds.</p>
+          <b-container v-else class="bv-example-row" align="center">
+            <b-row>
+              <b-col v-for="(guild, index) in premiumGuilds" :key="index">
+                <GuildCard
+                  :name="guild.name"
+                  :iconURL="
+                    guild.iconURL
+                      ? guild.iconURL
+                      : 'https://cdn.discordapp.com/icons/467300599885594624/1aede8acaf8cac9f70a51eb905b1fe4c.png'
+                  "
+                  :guildID="guild.id"
+                />
+              </b-col>
+            </b-row>
+          </b-container>
+        </b-tab>
       </b-tabs>
     </b-card>
   </div>
@@ -68,7 +85,7 @@ export default {
       const s = this.perPage;
       return Math.floor(l / s);
     },
-    ...mapState('oAuth', ['canManageGuilds'])
+    ...mapState('oAuth', ['canManageGuilds', 'premiumGuilds'])
   },
   mounted() {
     this.paginate(this.perPage, 0);
