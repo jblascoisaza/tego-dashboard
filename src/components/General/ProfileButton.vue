@@ -3,6 +3,10 @@
     <b-button v-if="!isAuthenticated && !loading" variant="primary" :href="oauthURL"
       >Login with Discord</b-button
     >
+    <b-nav-item-dropdown v-else :text="userData.tag" right>
+      <b-dropdown-item>Profile</b-dropdown-item>
+      <b-dropdown-item>Sign Out</b-dropdown-item>
+    </b-nav-item-dropdown>
   </b-navbar-nav>
 </template>
 
@@ -19,7 +23,7 @@ export default {
   },
   methods: mapActions('oAuth', ['fetchToken']),
   computed: {
-    ...mapState('oAuth', ['oauthURL', 'loading']),
+    ...mapState('oAuth', ['loading', 'oauthURL', 'userData']),
     ...mapGetters('oAuth', ['isAuthenticated'])
   }
 };
