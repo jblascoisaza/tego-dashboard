@@ -27,7 +27,7 @@ const mutations = {
   },
   SET_USER_DATA(state, user) {
     state.userData = user;
-    state.canManageGuilds = user.guilds.filter(guild => guild.userCanManage);
+    state.canManageGuilds = state.userData.guilds.filter(guild => guild.userCanManage);
     state.premiumGuilds = state.canManageGuilds.filter(guild => {
       if (guild.settings) {
         return guild.settings.premium;
