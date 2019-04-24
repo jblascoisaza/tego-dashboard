@@ -8,6 +8,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
+          <b-nav-item v-if="isAuthenticated" to="/guilds">Guilds</b-nav-item>
           <b-nav-item to="/about">About</b-nav-item>
         </b-navbar-nav>
 
@@ -18,11 +19,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import ProfileButton from '@/components/General/ProfileButton.vue';
 
 export default {
   components: {
     ProfileButton
-  }
+  },
+  computed: mapGetters('oAuth', ['isAuthenticated'])
 };
 </script>
