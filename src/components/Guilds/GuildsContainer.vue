@@ -15,6 +15,7 @@
         </b-col>
       </b-row>
       <b-pagination
+        v-if="guildsList.length > 3"
         @change="onPageChanged"
         v-model="currentPage"
         :per-page="perPage"
