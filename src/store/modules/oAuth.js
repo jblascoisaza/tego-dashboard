@@ -33,6 +33,12 @@ const mutations = {
         return guild.settings.premium;
       }
     });
+
+    if (state.premiumGuilds) {
+      state.canManageGuilds = state.canManageGuilds.filter(
+        guild => !state.premiumGuilds.includes(guild)
+      );
+    }
   },
   SET_LOADING(state, status) {
     state.loading = status;
