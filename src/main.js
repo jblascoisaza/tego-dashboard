@@ -11,6 +11,17 @@ import 'nprogress/nprogress.css';
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const isAuthenticated = store.getters['oAuth/isAuthenticated'];
+
+  if (requiresAuth && !isAuthenticated) {
+    next('/');
+  } else {
+    next();
+  }
+});
+
 export const PBar = NProgress;
 PBar.configure({ showSpinner: false });
 

@@ -26,7 +26,10 @@ export default new Router({
     {
       path: '/guilds',
       name: 'guilds',
-      component: Guilds
+      component: Guilds,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/guild/:id',
