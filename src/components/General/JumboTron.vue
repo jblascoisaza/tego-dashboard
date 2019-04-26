@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron :header="header" :lead="lead">
+    <b-jumbotron :header="header" :lead="lead" class="text-center">
       <p>{{ pContent }}</p>
       <b-button variant="primary" href="#">{{ bContent }}</b-button>
     </b-jumbotron>
