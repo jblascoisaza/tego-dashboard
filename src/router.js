@@ -3,7 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Guilds from './views/Guilds.vue';
 import Manage from './views/Manage.vue';
-import Premium from './views/Pricing.vue';
+import Pricing from './views/Pricing.vue';
 
 Vue.use(Router);
 
@@ -17,9 +17,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/premium',
-      name: 'premium',
-      component: Premium
+      path: '/pricing',
+      name: 'pricing',
+      component: Pricing
     },
     {
       path: '/about',

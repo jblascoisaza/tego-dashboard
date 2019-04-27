@@ -9,7 +9,7 @@
         <b-navbar-nav>
           <b-nav-item to="/">Home</b-nav-item>
           <b-nav-item v-if="isAuthenticated" to="/guilds">Guilds</b-nav-item>
-          <b-nav-item to="/premium">Premium</b-nav-item>
+          <b-nav-item to="/pricing">Pricing</b-nav-item>
           <b-nav-item to="/about">About</b-nav-item>
         </b-navbar-nav>
 
