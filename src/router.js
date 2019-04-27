@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Guilds from './views/Guilds.vue';
 import Manage from './views/Manage.vue';
+import Premium from './views/Pricing.vue';
 
 Vue.use(Router);
 
@@ -14,6 +15,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/premium',
+      name: 'premium',
+      component: Premium
     },
     {
       path: '/about',
