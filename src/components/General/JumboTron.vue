@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <b-jumbotron :header="header" :lead="lead" class="text-center">
-      <p>{{ pContent }}</p>
-      <b-button variant="primary" href="#">{{ bContent }}</b-button>
-    </b-jumbotron>
-  </div>
+  <b-jumbotron :header="header" :lead="lead" class="text-center">
+    <p>{{ pContent }}</p>
+    <b-button variant="primary" href="#">{{ bContent }}</b-button>
+  </b-jumbotron>
 </template>
 
 <script>

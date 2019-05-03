@@ -8,13 +8,13 @@
         customization.
       </p>
     </div>
-    <div class="container">
+    <b-container>
       <b-card-group class="text-center" deck>
         <PricingCard header="Free" title="$0 / mo" :list="fList" bContent="Go somewhere" />
         <PricingCard header="Basic" title="$2,99 / mo" :list="bList" bContent="Go somewhere" />
         <PricingCard header="Premium" title="$5 / mo" :list="pList" bContent="Go somewhere" />
       </b-card-group>
-    </div>
+    </b-container>
   </div>
 </template>
 
